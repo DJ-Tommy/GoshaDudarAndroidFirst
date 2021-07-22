@@ -7,15 +7,18 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.crazyapps.goshadudarandroidfirst.adapter.CategoryAdapter;
+import com.crazyapps.goshadudarandroidfirst.adapter.CourseAdapter;
 import com.crazyapps.goshadudarandroidfirst.model.Category;
+import com.crazyapps.goshadudarandroidfirst.model.Course;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    RecyclerView categoryRecycler;
+    RecyclerView categoryRecycler, courseRecycler;
     CategoryAdapter categoryAdapter;
+    CourseAdapter courseAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,12 @@ public class MainActivity extends AppCompatActivity {
         categoryList.add(new Category (4,"Прочее"));
 
         setCategoryRecycler(categoryList);
+
+        List<Course> courseList = new ArrayList<>();
+        courseList.add(new Course(1, "java", "Профессия Java\nразработчик", "31 февраля", "начальный", "#424345"));
+        courseList.add(new Course(2, "python", "Профессия Python\nразработчик", "31 февраля", "начальный", "#9FA52D"));
+
+        setCourseRecycler(courseList);
     }
 
     private void setCategoryRecycler(List<Category> categoryList) {
@@ -41,5 +50,14 @@ public class MainActivity extends AppCompatActivity {
         categoryRecycler.setAdapter(categoryAdapter);
     }
 
+    private void setCourseRecycler(List<Course> courseList) {
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this, RecyclerView.HORIZONTAL, false);
+
+        courseRecycler = findViewById(R.id.courseRecycler);
+        courseRecycler.setLayoutManager(layoutManager);
+
+        courseAdapter = new CourseAdapter(this, courseList);
+        courseRecycler.setAdapter(courseAdapter);
+    }
 
 }

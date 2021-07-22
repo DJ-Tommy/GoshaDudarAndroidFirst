@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Gosha Dudar Android First</string>
+    <string name="app_name">E-Commerce</string>
     <string name="sales_icon">Распродажа</string>
     <string name="contacts_text">Контакты</string>
     <string name="about_text">Про нас</string>
@@ -7,4 +7,7 @@
     <string name="logo_of_app_1">Courses</string>
     <string name="logo_of_app_2">App</string>
     <string name="menu_icon">Меню</string>
+    <string name="course_start_date">Старт обучения</string>
+    <string name="course_level">Уровень</string>
+
 </resources>
